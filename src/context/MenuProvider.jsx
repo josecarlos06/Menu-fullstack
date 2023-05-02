@@ -27,7 +27,7 @@ export const MenuProvider = ({children}) => {
    const handlePlatillo = (objPlatillo) => {
       setPlatillo(objPlatillo);
    }
-   const addPedido = ({categoryId,imagen,...objPedido}) =>{
+   const addPedido = ({categoryId,...objPedido}) =>{
       if(pedido.some( nota => nota.id === objPedido.id )){
          const actPedido = pedido.map(nota => {
             if(nota.id === objPedido.id){
@@ -42,6 +42,14 @@ export const MenuProvider = ({children}) => {
          toast.success("Se agrego correctamente")
       }
    }
+   const changeResumen = (id) => {
+      const actPlatillo = pedido.filter(platilloState => platilloState.id === id);
+      setPlatillo(actPlatillo[0]);
+   }
+   const deletePlatillo = (id) => {
+      const actPlatillo = pedido.filter(platilloState => platilloState.id !== id);
+      setPedido(actPlatillo);
+   }
   return (
    <MenuContext.Provider
       value={{
@@ -51,7 +59,9 @@ export const MenuProvider = ({children}) => {
          handlePlatillo,
          platillo,
          pedido,
-         addPedido
+         addPedido,
+         changeResumen,
+         deletePlatillo
       }}
    >
       {children}
