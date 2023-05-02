@@ -1,6 +1,6 @@
 import { getCategory } from "@/service/service";
 import { createContext, useEffect, useState } from "react"
-
+import { toast } from "react-toastify";
 const MenuContext = createContext();
 
 export const MenuProvider = ({children}) => {
@@ -36,8 +36,10 @@ export const MenuProvider = ({children}) => {
             return nota;
          })
          setPedido(actPedido)
+         toast.success("Se edito el producto")
       }else{
          setPedido([...pedido, objPedido])
+         toast.success("Se agrego correctamente")
       }
    }
   return (
