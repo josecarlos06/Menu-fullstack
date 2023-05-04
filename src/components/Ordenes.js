@@ -1,10 +1,15 @@
 import { formatDinero } from "@/helpers";
 import OrdenPedido from "./OrdenPedido";
+import axios from "axios";
 
 const Ordenes = ({orden}) => {
    const {id, total, pedido,nombre, estado} = orden;
-   const completarOrden = ()=>{
-      console.log("object");
+   const completarOrden = async()=>{
+      try{
+         await axios.post(`/api/ordenes/${id}`)
+      }catch(error){
+         console.log(error);
+      }
    }
   return (
     <div className="border p-10 shadow mb-5 last-of-type:mb-0 rounded">

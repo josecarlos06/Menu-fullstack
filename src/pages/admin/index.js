@@ -4,7 +4,7 @@ import useSWR from 'swr';
 
 export default function Index(){
    const fetcher = ()=> axios('/api/ordenes').then( datos => datos.data);
-   const { data, error, isLoading } = useSWR('/api/ordenes', fetcher);
+   const { data, error, isLoading } = useSWR('/api/ordenes', fetcher,{refreshInterval:50});
    return(
       <>
       <main className="container w-11/12 mx-auto mt-5">   

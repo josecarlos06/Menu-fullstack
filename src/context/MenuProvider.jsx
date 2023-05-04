@@ -93,7 +93,8 @@ export const MenuProvider = ({children}) => {
          handleSubmit,
          setNombre,
          nombre,
-         total
+         total,
+         deletePlatillo
       }}
    >
       {children}
