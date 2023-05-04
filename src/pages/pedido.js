@@ -3,7 +3,7 @@ import ListadoPedidos from "@/components/ListadoPedidos";
 import useMenu from "@/hooks/useMenu";
 import { useMemo } from "react";
 
-export default function pedido(){
+export default function Pedido(){
    const {pedido} = useMenu();
  return(
       <main className="container w-11/12 mx-auto mt-5">

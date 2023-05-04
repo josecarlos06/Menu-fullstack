@@ -31,9 +31,9 @@ const Footer = () => {
             <Image src="/assets/icons/heart.svg" width={20} height={20} alt="home"/>
             <span>Resumen</span>
          </Link>
-         <Link href="/" className="text-white flex flex-col items-center">
+         <Link href="/orden" className="text-white flex flex-col items-center">
             <Image src="/assets/icons/shop.svg" width={20} height={20} alt="home"/>
-            <span>Articulos</span>
+            <span>Total</span>
          </Link>
       </nav>
     </section>
